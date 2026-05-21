@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практика - Экзамен</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="nav">
+        <a href="index.html">Теория</a>
+        <a href="practice.html">Практика</a>
+        <a href="index.php" download="index.php" class="download-btn">Скачать</a>
+
+    </div>
+
+    <div class="two-columns">
+        <!-- ==================== ЛЕВАЯ КОЛОНКА: JAVASCRIPT ==================== -->
+        <div class="col js-col">
+            <h2>JavaScript Практика</h2>
+
+            <!-- ЗАДАНИЕ 1.1: РАБОТА С МАССИВАМИ - ВЫВОД ПЕРВОГО МАССИВА ЧЕРЕЗ + -->
+            <div class="task-block">
+                <span class="task-title">1.1. Массивы: вывод первого массива через "+"</span>
+                <div class="answer">
+                    // Создаем пустой массив, заполняем 3 элементами с клавиатуры через prompt<br>
+                    let mas1 = [];<br>
+                    for(let i = 0; i &lt; 3; i++){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;let a = prompt('Введите элемент для первого массива:');<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;mas1.push(a);<br>
+                    }<br>
+                    // Выводим элементы через join("+") - объединяет элементы с разделителем "+"<br>
+                    let rez = mas1.join("+");<br>
+                    alert("Первый массив: " + rez);<br>
+                    <br>
+                    <span class="code">// Результат: например, "Первый массив: a+b+c"</span>
+                </div>
+            </div>
+
+            <!-- ЗАДАНИЕ 1.2: ВЫВОД ВТОРОГО МАССИВА В ОБРАТНОМ ПОРЯДКЕ -->
+            <div class="task-block">
+                <span class="task-title">1.2. Массивы: вывод второго массива в обратном порядке</span>
+                <div class="answer">
+                    let mas1 = [];<br>
+                    for(let i = 0; i &lt; 3; i++){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;mas1.push(prompt('Введите элемент:'));<br>
+                    }<br>
+                    let mass2 = [1, 2, 3]; // второй массив задан в коде<br>
+                    // reverse() - переворачивает массив, join(",") - объединяет через запятую<br>
+                    alert("Второй массив в обратном порядке: " + mass2.reverse().join(","));<br>
+                    <br>
+                    <span class="code">// Результат: "3,2,1"</span>
+                </div>
+            </div>
+
+            <!-- ЗАДАНИЕ 1.3: ОБЪЕДИНЕНИЕ МАССИВОВ И ВЫВОД С НОВОЙ СТРОКИ -->
+            <div class="task-block">
+                <span class="task-title">1.3. Массивы: объединение и вывод с новой строки</span>
+                <div class="answer">
+                    let mas1 = [];<br>
+                    for(let i = 0; i &lt; 3; i++){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;mas1.push(prompt('Введите элемент:'));<br>
+                    }<br>
+                    let mass2 = [1, 2, 3];<br>
+                    // concat() - объединяет два массива в один<br>
+                    let rez = mas1.concat(mass2);<br>
+                    // Выводим каждый элемент с новой строки через document.write<br>
+                    for(let i = 0; i &lt; rez.length; i++){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;document.write(rez[i] + "&lt;br&gt;");<br>
+                    }<br>
+                    <span class="code">// Результат: каждый элемент объединенного массива на новой строке</span>
+                </div>
+            </div>
+
+            <!-- ЗАДАНИЕ 1.4: ДОБАВЛЕНИЕ ЭЛЕМЕНТА И ВЫВОД ДЛИНЫ -->
+            <div class="task-block">
+                <span class="task-title">1.4. Массивы: добавление элемента и длина массива</span>
+                <div class="answer">
+                    let mas1 = [];<br>
+                    for(let i = 0; i &lt; 3; i++){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;mas1.push(prompt('Введите элемент:'));<br>
+                    }<br>
+                    let mass2 = [1, 2, 3];<br>
+                    let rez = mas1.concat(mass2);<br>
+                    let b = prompt('Введите дополнительный элемент:');<br>
+                    // push() - добавляет элемент в конец массива и возвращает новую длину<br>
+                    document.write('Длина нового массива: ' + rez.push(b));<br>
+                    <span class="code">// Результат: выводится длина массива после добавления (например, 7)</span>
+                </div>
+            </div>
+
+            <!-- ЗАДАНИЕ 1.5: УДАЛЕНИЕ ПЕРВЫХ ДВУХ ЭЛЕМЕНТОВ -->
+            <div class="task-block">
+                <span class="task-title">1.5. Массивы: удаление первых двух элементов</span>
+                <div class="answer">
+                    let mas1 = [];<br>
+                    for(let i = 0; i &lt; 3; i++){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;mas1.push(prompt('Введите элемент:'));<br>
+                    }<br>
+                    let mass2 = [1, 2, 3];<br>
+                    let rez = mas1.concat(mass2);<br>
+                    // splice(индекс, количество) - удаляет элементы начиная с указанного индекса<br>
+                    let del = rez.splice(0, 2);<br>
+                    document.write("Массив после удаления: " + rez);<br>
+                    <span class="code">// Результат: массив без первых двух элементов</span>
+                </div>
+            </div>
+
+            <!-- ЗАДАНИЕ 1.6: ВЫВОД ЭЛЕМЕНТА ПО УКАЗАННОМУ ИНДЕКСУ -->
+            <div class="task-block">
+                <span class="task-title">1.6. Массивы: вывод элемента по индексу</span>
+                <div class="answer">
+                    let mas1 = [];<br>
+                    for(let i = 0; i &lt; 3; i++){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;mas1.push(prompt('Введите элемент:'));<br>
+                    }<br>
+                    let mass2 = [1, 2, 3];<br>
+                    let rez = mas1.concat(mass2);<br>
+                    let ind = prompt("Введите индекс элемента (0-5):");<br>
+                    // Доступ к элементу массива через квадратные скобки с индексом<br>
+                    document.write("Элемент с индексом " + ind + ": " + rez[ind]);<br>
+                    <span class="code">// Результат: значение элемента по указанному индексу</span>
+                </div>
+            </div>
+
+            <!-- ЗАДАНИЕ 2: ФОРМА С ПРОВЕРКОЙ ПОЛЕЙ -->
+            <div class="task-block">
+                <span class="task-title">2. Форма: регистрация с проверкой полей</span>
+                <div class="answer">
+                    // HTML-форма с полями: ФИО, Email, Пароль, Повтор пароля, чекбокс<br>
+                    // Кнопка "Очистить" меняет текст на "Готово"<br>
+                    // Кнопка "Зарегистрироваться" проверяет заполнение всех полей и чекбокс<br>
+                    <br>
+                    &lt;form id="formID"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;ФИО &lt;input type="text" id="name"&gt;&lt;br&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;E-mail &lt;input type="email" id="email"&gt;&lt;br&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Пароль &lt;input type="password" id="pass"&gt;&lt;br&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Повтор пароля &lt;input type="password" id="povtPass"&gt;&lt;br&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="checkbox" id="chBx"&gt; Согласие&lt;br&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="submit" onclick="return prov()"&gt;Зарегистрироваться&lt;/button&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="reset" id="clBtn" onclick="clearBtn()"&gt;Очистить&lt;/button&gt;<br>
+                    &lt;/form&gt;<br>
+                    <br>
+                    &lt;script&gt;<br>
+                    // Функция для кнопки Очистить - меняет текст кнопки<br>
+                    function clearBtn() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('clBtn').textContent = 'Готово';<br>
+                    }<br>
+                    // Функция проверки перед отправкой<br>
+                    function prov() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;let name = document.getElementById('name').value;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;let email = document.getElementById('email').value;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;let pass = document.getElementById('pass').value;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;let povtPass = document.getElementById('povtPass').value;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;let ch = document.getElementById('chBx');<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;// Проверка: все поля должны быть заполнены<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;if (name === '' || email === '' || pass === '' || povtPass === '') {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert('Заполните все поля!');<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return false;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;} else if (ch.checked === false) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert('Примите пользовательское соглашение');<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return false;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;} else {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert('Форма отправлена!');<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return true;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }<br>
+                    &lt;/script&gt;<br>
+                    <span class="code">// При пустых полях или неотмеченном чекбоксе — ошибка, иначе отправка</span>
+                </div>
+            </div>
+
+            <!-- ЗАДАНИЕ 3: ФОРМА С РАДИОКНОПКАМИ -->
+            <div class="task-block">
+                <span class="task-title">3. Форма: радиокнопки с проверкой и сменой выбора</span>
+                <div class="answer">
+                    &lt;form id="formID"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Какая пасхалка круче?&lt;br&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="radio" name="posx" id="r1"&gt; 67&lt;br&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="radio" name="posx" id="r2"&gt; 69&lt;br&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="button" onclick="rev()"&gt;Сменить выбор&lt;/button&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="button" onclick="prov()"&gt;Проверить&lt;/button&gt;<br>
+                    &lt;/form&gt;<br>
+                    <br>
+                    &lt;script&gt;<br>
+                    // Функция для смены переключателей<br>
+                    function rev() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;let r1 = document.getElementById('r1');<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;let r2 = document.getElementById('r2');<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;if (r1.checked) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r1.checked = false;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r2.checked = true;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;} else if (r2.checked) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r2.checked = false;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r1.checked = true;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }<br>
+                    // Функция проверки выбора<br>
+                    function prov() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;let r1 = document.getElementById('r1');<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;let r2 = document.getElementById('r2');<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;if (r1.checked) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert('Ты красавчик');<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;} else if (r2.checked) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert('Ты даун?');<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;} else {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert('Выбери вариант');<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }<br>
+                    &lt;/script&gt;<br>
+                    <span class="code">// Кнопка "Сменить выбор" переключает радиокнопки, "Проверить" выводит сообщение</span>
+                </div>
+            </div>
+
+            <!-- ЗАДАНИЕ 4: ВЫБОР ЦВЕТА С ПЕРЕВОДОМ НА АНГЛИЙСКИЙ -->
+            <div class="task-block">
+                <span class="task-title">4. Выбор цвета: перевод на английский и окраска блока</span>
+                <div class="answer">
+                    &lt;select id="color"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;красный&lt;/option&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;синий&lt;/option&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;зеленый&lt;/option&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;желтый&lt;/option&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;фиолетовый&lt;/option&gt;<br>
+                    &lt;/select&gt;<br>
+                    &lt;button onclick="go()"&gt;Применить&lt;/button&gt;<br>
+                    &lt;p id="block" style="padding:20px;border:1px solid #000"&gt;Цветной блок&lt;/p&gt;<br>
+                    &lt;p id="trans"&gt;&lt;/p&gt;<br>
+                    <br>
+                    &lt;script&gt;<br>
+                    function go() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;let c = document.getElementById("color").value;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;let en;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;// switch - выбираем английское название цвета<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;switch(c) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case "красный": en = "red"; break;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case "синий": en = "blue"; break;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case "зеленый": en = "green"; break;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case "желтый": en = "yellow"; break;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case "фиолетовый": en = "purple"; break;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default: en = "black";<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;// Выводим перевод<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById("trans").innerHTML = "Английский: " + en;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;// Меняем цвет фона блока<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById("block").style.backgroundColor = en;<br>
+                    }<br>
+                    &lt;/script&gt;<br>
+                    <span class="code">// При выборе цвета блок перекрашивается и показывается английское название</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== ПРАВАЯ КОЛОНКА: PHP ==================== -->
+        <div class="col php-col">
+            <h2>PHP Практика</h2>
+
+            <!-- ЗАДАНИЕ PHP 1: ДЕНЬ НЕДЕЛИ ПО ЧИСЛУ (GET-параметр) -->
+            <div class="task-block">
+                <span class="task-title">1. PHP. День недели по числу (передача через GET)</span>
+                <div class="answer">
+                    // Пример вызова: ?day=1 в адресной строке<br>
+                    &lt;?php<br>
+                    // isset() - проверяет, существует ли параметр, intval() - преобразует в целое число<br>
+                    $day_number = isset($_GET['day']) ? intval($_GET['day']) : 0;<br>
+                    // switch - выбираем день недели по числу<br>
+                    switch ($day_number) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;case 1: echo "Понедельник"; break;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;case 2: echo "Вторник"; break;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;case 3: echo "Среда"; break;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;case 4: echo "Четверг"; break;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;case 5: echo "Пятница"; break;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;case 6: echo "Суббота"; break;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;case 7: echo "Воскресенье"; break;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;default: echo "Введите число от 1 до 7";<br>
+                    }<br>
+                    ?&gt;<br>
+                    <span class="code">// При day=1 выведет "Понедельник"</span>
+                </div>
+            </div>
+
+            <!-- ЗАДАНИЕ PHP 2: ПОДСЧЕТ СИМВОЛОВ "а" В СТРОКЕ -->
+            <div class="task-block">
+                <span class="task-title">2. PHP. Подсчет символов "а" в строке</span>
+                <div class="answer">
+                    &lt;?php<br>
+                    $str = "абракадабра";<br>
+                    // substr_count() - считает количество вхождений подстроки<br>
+                    $count = substr_count($str, "а");<br>
+                    echo "Количество символов 'а': " . $count;<br>
+                    ?&gt;<br>
+                    <span class="code">// Результат: 5 (а, а, а, а, а)</span>
+                </div>
+            </div>
+
+            <!-- ЗАДАНИЕ PHP 3: ПОДСЧЕТ СЛОВ НА "Б" -->
+            <div class="task-block">
+                <span class="task-title">3. PHP. Подсчет слов, начинающихся на "Б"</span>
+                <div class="answer">
+                    &lt;?php<br>
+                    $str = "Быстрый Боб бежит по Бульвару";<br>
+                    // strtolower() - переводит строку в нижний регистр для корректного сравнения<br>
+                    $str = strtolower($str);<br>
+                    // explode() - разбивает строку на массив по пробелу<br>
+                    $words = explode(" ", $str);<br>
+                    $count = 0;<br>
+                    foreach ($words as $word) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;// mb_substr() - берет первый символ слова (для работы с кириллицей)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;if (mb_substr($word, 0, 1) === "б") {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$count++;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }<br>
+                    echo "Слов на 'Б': " . $count;<br>
+                    ?&gt;<br>
+                    <span class="code">// Результат: 3 (быстрый, боб, бульвару)</span>
+                </div>
+            </div>
+
+            <!-- ЗАДАНИЕ PHP 4: ФУНКЦИЯ COMPACT ДЛЯ МАССИВА -->
+            <div class="task-block">
+                <span class="task-title">4. PHP. Создание массива через compact()</span>
+                <div class="answer">
+                    &lt;?php<br>
+                    $age = 25;<br>
+                    $fio = "Иванов Иван Иванович";<br>
+                    // compact() - создает массив из переменных, где ключи = имена переменных<br>
+                    $person = compact('age', 'fio');<br>
+                    print_r($person);<br>
+                    // Для 5 строк можно создать 5 таких массивов<br>
+                    ?&gt;<br>
+                    <span class="code">// Результат: Array ( [age] => 25 [fio] => Иванов Иван Иванович )</span>
+                </div>
+            </div>
+
+            <!-- ЗАДАНИЕ PHP 5: ПРОИЗВЕДЕНИЕ ЭЛЕМЕНТОВ МАССИВА -->
+            <div class="task-block">
+                <span class="task-title">5. PHP. Произведение элементов массива</span>
+                <div class="answer">
+                    &lt;?php<br>
+                    $numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10, 1];<br>
+                    $product = 1; // начальное значение 1 (умножение на 1 не меняет результат)<br>
+                    // foreach - перебирает все элементы массива<br>
+                    foreach ($numbers as $number) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;$product *= $number; // то же самое: $product = $product * $number<br>
+                    }<br>
+                    echo "Произведение: " . $product;<br>
+                    ?&gt;<br>
+                    <span class="code">// Результат: 2*3*4*5*6*7*8*9*10*1 = 3628800</span>
+                </div>
+            </div>
+
+            <!-- ЗАДАНИЕ PHP 6: ЧИСЛА, КРАТНЫЕ 7, И ИХ ПРОИЗВЕДЕНИЕ -->
+            <div class="task-block">
+                <span class="task-title">6. PHP. Числа от 10 до 60, кратные 7, их произведение</span>
+                <div class="answer">
+                    &lt;?php<br>
+                    $a = 10;<br>
+                    $b = 61; // до 60 включительно<br>
+                    $product = 1;<br>
+                    for ($i = $a; $i &lt; $b; $i++) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;// % - оператор остатка от деления. Если остаток 0 - число кратно 7<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;if ($i % 7 == 0) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$product *= $i;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }<br>
+                    echo $product;<br>
+                    ?&gt;<br>
+                    <span class="code">// Кратные 7: 14, 21, 28, 35, 42, 49, 56. Их произведение = 14*21*28*35*42*49*56</span>
+                </div>
+            </div>
+
+            <!-- ЗАДАНИЕ PHP 7: ПОПАДАЕТ ЛИ В ПОЛОВИНУ ЧАСА -->
+            <div class="task-block">
+                <span class="task-title">7. PHP. Определение половины часа (0-29 или 30-59)</span>
+                <div class="answer">
+                    &lt;?php<br>
+                    $min = 25; // проверяемое значение<br>
+                    if ($min &gt;= 0 &amp;&amp; $min &lt;= 29) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;echo "Первая половина часа (0-29)";<br>
+                    } elseif ($min &gt;= 30 &amp;&amp; $min &lt;= 59) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;echo "Вторая половина часа (30-59)";<br>
+                    } else {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;echo "Некорректное значение";<br>
+                    }<br>
+                    ?&gt;<br>
+                    <span class="code">// При min=25: "Первая половина часа", при min=45: "Вторая половина часа"</span>
+                </div>
+            </div>
+
+            <!-- ЗАДАНИЕ PHP 8: СУММА ЦИФР СТРОКИ -->
+            <div class="task-block">
+                <span class="task-title">8. PHP. Сумма цифр строки (например "12345")</span>
+                <div class="answer">
+                    &lt;?php<br>
+                    $str = "12345";<br>
+                    $len = strlen($str); // длина строки<br>
+                    $sum = 0;<br>
+                    for ($i = 0; $i &lt; $len; $i++) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;// $str[$i] - доступ к i-му символу строки<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;$sum += $str[$i];<br>
+                    }<br>
+                    echo "Сумма цифр: " . $sum;<br>
+                    ?&gt;<br>
+                    <span class="code">// Результат: 1+2+3+4+5 = 15</span>
+                </div>
+            </div>
+
+            <!-- ЗАДАНИЕ PHP 9: ПОИСК ЧИСЛА, КРАТНОГО 3 И 5 -->
+            <div class="task-block">
+                <span class="task-title">9. PHP. Поиск числа, кратного 3 и 5 одновременно</span>
+                <div class="answer">
+                    &lt;?php<br>
+                    $arr = [5, 2, 3, 4, 75, 6, 7, 8];<br>
+                    $len = count($arr); // количество элементов массива<br>
+                    for ($i = 0; $i &lt; $len; $i++) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;// && - логическое "И". Число должно делиться и на 3, и на 5<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;if ($arr[$i] % 3 == 0 &amp;&amp; $arr[$i] % 5 == 0) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo "Найдено: " . $arr[$i];<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break; // прерываем цикл после нахождения<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }<br>
+                    ?&gt;<br>
+                    <span class="code">// Результат: 75 (делится и на 3, и на 5)</span>
+                </div>
+            </div>
+
+            <!-- ЗАДАНИЕ PHP 10: КВАДРАТЫ ИНДЕКСОВ МАССИВА -->
+            <div class="task-block">
+                <span class="task-title">10. PHP. Массив из квадратов индексов (0-9)</span>
+                <div class="answer">
+                    &lt;?php<br>
+                    $arr = [];<br>
+                    for ($i = 0; $i &lt; 10; $i++) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;$arr[$i] = $i * $i; // квадрат индекса<br>
+                    }<br>
+                    print_r($arr);<br>
+                    ?&gt;<br>
+                    <span class="code">// Результат: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</span>
+                </div>
+            </div>
+
+            <!-- ЗАДАНИЕ PHP 11: ЗАМЕНА % НА * В СТРОКЕ -->
+            <div class="task-block">
+                <span class="task-title">11. PHP. Замена символа % на * в строке</span>
+                <div class="answer">
+                    &lt;?php<br>
+                    $str = "hello%world%php%";<br>
+                    // str_replace() - заменяет все вхождения первого аргумента на второй<br>
+                    $res = str_replace('%', '*', $str);<br>
+                    echo $res;<br>
+                    ?&gt;<br>
+                    <span class="code">// Результат: hello*world*php*</span>
+                </div>
+            </div>
+
+            <!-- ЗАДАНИЕ PHP 12: ПЕРЕВОРОТ СТРОКИ -->
+            <div class="task-block">
+                <span class="task-title">12. PHP. Переворот строки (strrev)</span>
+                <div class="answer">
+                    &lt;?php<br>
+                    $str = "lrepoleveD .tset si sihT";<br>
+                    // strrev() - переворачивает строку задом наперед<br>
+                    echo strrev($str);<br>
+                    ?&gt;<br>
+                    <span class="code">// Результат: "This is test. Developed"</span>
+                </div>
+            </div>
+
+            <!-- ЗАДАНИЕ PHP 13: ВРЕМЯ ГОДА ПО НОМЕРУ МЕСЯЦА -->
+            <div class="task-block">
+                <span class="task-title">13. PHP. Время года по номеру месяца (switch)</span>
+                <div class="answer">
+                    &lt;?php<br>
+                    $mon = 12;<br>
+                    switch($mon) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;case 12: case 1: case 2:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo "Зима"; break;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;case 3: case 4: case 5:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo "Весна"; break;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;case 6: case 7: case 8:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo "Лето"; break;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;case 9: case 10: case 11:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo "Осень"; break;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;default: echo "Некорректный месяц";<br>
+                    }<br>
+                    ?&gt;<br>
+                    <span class="code">// При mon=12: "Зима", при mon=6: "Лето"</span>
+                </div>
+            </div>
+
+            <!-- ЗАДАНИЕ PHP 14: ПОДСЧЕТ СЛОВ НА "a" -->
+            <div class="task-block">
+                <span class="task-title">14. PHP. Подсчет слов на "a" в строке</span>
+                <div class="answer">
+                    &lt;?php<br>
+                    $str = "apple orange apricot banana";<br>
+                    $words = explode(" ", $str); // разбиваем на слова по пробелу<br>
+                    $count = 0;<br>
+                    foreach ($words as $word) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;// $word[0] - первый символ слова<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;if ($word[0] == 'a') {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$count++;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }<br>
+                    echo $count;<br>
+                    ?&gt;<br>
+                    <span class="code">// Результат: 2 (apple и apricot)</span>
+                </div>
+            </div>
+
+            <!-- ЗАДАНИЕ PHP 15: ОБЪЕДИНЕНИЕ ДВУХ МАССИВОВ -->
+            <div class="task-block">
+                <span class="task-title">15. PHP. Объединение двух массивов (array_merge)</span>
+                <div class="answer">
+                    &lt;?php<br>
+                    $arr1 = [1, 2, 3];<br>
+                    $arr2 = [4, 5, 6];<br>
+                    // array_merge() - объединяет массивы<br>
+                    $arr3 = array_merge($arr1, $arr2);<br>
+                    print_r($arr3);<br>
+                    ?&gt;<br>
+                    <span class="code">// Результат: [1, 2, 3, 4, 5, 6]</span>
+                </div>
+            </div>
+
+            <!-- ЗАДАНИЕ PHP 16: УДАЛЕНИЕ ПЕРВОГО И ПОСЛЕДНЕГО ЭЛЕМЕНТА -->
+            <div class="task-block">
+                <span class="task-title">16. PHP. Удаление первого и последнего элемента</span>
+                <div class="answer">
+                    &lt;?php<br>
+                    $arr = [1, 2, 3, 4, 5, 6];<br>
+                    // array_shift() - удаляет первый элемент и возвращает его<br>
+                    array_shift($arr);<br>
+                    // array_pop() - удаляет последний элемент и возвращает его<br>
+                    array_pop($arr);<br>
+                    print_r($arr);<br>
+                    ?&gt;<br>
+                    <span class="code">// Результат: [2, 3, 4, 5]</span>
+                </div>
+            </div>
+
+            <!-- ЗАДАНИЕ PHP 17: АССОЦИАТИВНЫЙ МАССИВ ДНЕЙ НЕДЕЛИ -->
+            <div class="task-block">
+                <span class="task-title">17. PHP. Ассоциативный массив дней недели</span>
+                <div class="answer">
+                    &lt;?php<br>
+                    $days = [<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;1 =&gt; 'понедельник',<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;2 =&gt; 'вторник',<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;3 =&gt; 'среда',<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;4 =&gt; 'четверг',<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;5 =&gt; 'пятница',<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;6 =&gt; 'суббота',<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;7 =&gt; 'воскресенье'<br>
+                    ];<br>
+                    echo $days[3]; // выводим среду<br>
+                    ?&gt;<br>
+                    <span class="code">// Результат: среда</span>
+                </div>
+            </div>
+
+            <!-- ЗАДАНИЕ PHP 18: TRY-CATCH ДЕЛЕНИЯ НА НОЛЬ -->
+            <div class="task-block">
+                <span class="task-title">18. PHP. Обработка ошибки деления на ноль (try-catch)</span>
+                <div class="answer">
+                    &lt;?php<br>
+                    function divide($a, $b) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;if ($b == 0) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// throw - выбрасывает исключение<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw new Exception("На ноль делить нельзя!");<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return $a / $b;<br>
+                    }<br>
+                    <br>
+                    try {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;echo divide(10, 0);<br>
+                    } catch (Exception $e) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;// catch - перехватывает исключение<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;echo "Ошибка: " . $e->getMessage();<br>
+                    }<br>
+                    ?&gt;<br>
+                    <span class="code">// Результат: "Ошибка: На ноль делить нельзя!"</span>
+                </div>
+            </div>
+
+            <!-- ЗАДАНИЕ PHP 19: ПРОВЕРКА НАТУРАЛЬНОГО ЧИСЛА -->
+            <div class="task-block">
+                <span class="task-title">19. PHP. Проверка натурального числа</span>
+                <div class="answer">
+                    &lt;?php<br>
+                    $a = 3;<br>
+                    // fmod($a,1) - остаток от деления на 1. Если 0 - число целое<br>
+                    if ($a &gt; 0 &amp;&amp; fmod($a, 1) == 0) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;echo "Число натуральное";<br>
+                    } else {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;echo "Не натуральное";<br>
+                    }<br>
+                    ?&gt;<br>
+                    <span class="code">// При a=3: "Число натуральное", при a=0 или a=3.5: "Не натуральное"</span>
+                </div>
+            </div>
+
+            <!-- ЗАДАНИЕ PHP 20: ПРОВЕРКА ПАЛИНДРОМА -->
+            <div class="task-block">
+                <span class="task-title">20. PHP. Проверка палиндрома</span>
+                <div class="answer">
+                    &lt;?php<br>
+                    $str = "шалаш";<br>
+                    // strrev() - переворачивает строку, затем сравниваем с оригиналом<br>
+                    if ($str == strrev($str)) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;echo "Строка является палиндромом";<br>
+                    } else {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;echo "Не палиндром";<br>
+                    }<br>
+                    ?&gt;<br>
+                    <span class="code">// "шалаш" - палиндром (читается одинаково слева направо и справа налево)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
